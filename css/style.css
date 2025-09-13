@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/*-------------------------------------------------------------------------------------------
+------------------------------------------ЦВЕТА----------------------------------------------
+-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------
+------------------------------------------ШРИФТЫ---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------ПЕРЕМЕННЫЕ------------------------------------------
+-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------
+-----------------------------------СТАНДАРТНЫЕ НАСТРОЙКИ-------------------------------------
+-------------------------------------------------------------------------------------------*/
+html,
+body {
+  height: 100%;
+}
+
+.body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #828282;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+div[class*=__container] {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+.title {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 120%;
+  color: #25282b;
+}
+@media (max-width: 1200px) {
+  .title {
+    font-size: 56px;
+  }
+}
+@media (max-width: 992px) {
+  .title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+.button {
+  display: inline-flex;
+  line-height: 44px;
+  padding: 0 24px;
+  border: 2px #25282b solid;
+  color: #25282b;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+@media (max-width: 1200px) {
+  .button {
+    line-height: 36px;
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+.button:hover {
+  background-color: #6db9ff;
+  border: 2px transparent solid;
+}
+.button_blue {
+  background-color: #6db9ff;
+  border: 2px transparent solid;
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------HEADER----------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+@media (max-width: 576px) {
+  .header {
+    position: relative;
+  }
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 12px 0;
+}
+@media (max-width: 768px) {
+  .header__container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.header__logo {
+  font-family: "Comfortaa", sans-serif;
+  color: #25282b;
+  line-height: 180%;
+}
+.header__list {
+  padding: 2px 0;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .header__list {
+    gap: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .header__list {
+    gap: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .header__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.header__link {
+  color: #25282b;
+  transition: all 0.3s ease;
+}
+@media (max-width: 992px) {
+  .header__link {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .header__link {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .header__link {
+    font-size: 16px;
+  }
+}
+.header__link:hover {
+  color: #000;
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------INFO------------------------------------------------
+-------------------------------------------------------------------------------------------*/
+.info {
+  padding-bottom: 144px;
+  position: relative;
+  padding-top: 56px;
+}
+@media (max-width: 768px) {
+  .info {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 576px) {
+  .info {
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+}
+.info__container {
+  display: flex;
+  min-height: 629px;
+}
+@media (max-width: 1200px) {
+  .info__container {
+    min-height: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .info__container {
+    flex-direction: column-reverse;
+  }
+}
+.info__inner {
+  flex: 0 1 50%;
+  padding-right: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 1200px) {
+  .info__inner {
+    padding-right: 80px;
+  }
+}
+@media (max-width: 992px) {
+  .info__inner {
+    padding-right: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .info__inner {
+    padding-right: 0;
+    flex: 1 1 100%;
+  }
+}
+.info__speciality {
+  font-weight: 700;
+  color: #6db9ff;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+@media (max-width: 1200px) {
+  .info__speciality {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 992px) {
+  .info__speciality {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+}
+.info__title {
+  margin-bottom: 32px;
+}
+@media (max-width: 1200px) {
+  .info__title {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 992px) {
+  .info__title {
+    margin-bottom: 18px;
+  }
+}
+.info__text {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+@media (max-width: 1200px) {
+  .info__text {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 992px) {
+  .info__text {
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+}
+.info__buttons {
+  display: flex;
+  gap: 12px;
+}
+.info__photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+}
+@media (max-width: 768px) {
+  .info__photo {
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    position: static;
+    margin-bottom: 20px;
+  }
+}

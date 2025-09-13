@@ -1,0 +1,309 @@
+/*-------------------------------------------------------------------------------------------
+------------------------------------------ЦВЕТА----------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+$mainColor: #828282;
+$darkColor: #25282b;
+$black: #000;
+$blueColor: #6db9ff;
+
+/*-------------------------------------------------------------------------------------------
+------------------------------------------ШРИФТЫ---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+$mainFont: "Nunito", sans-serif;
+$Comfortaa: "Comfortaa", sans-serif;
+$Playfair: "Playfair Display", sans-serif;
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------ПЕРЕМЕННЫЕ------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------СТАНДАРТНЫЕ НАСТРОЙКИ-------------------------------------
+-------------------------------------------------------------------------------------------*/
+html,
+body {
+  height: 100%;
+}
+
+.body {
+  font-family: $mainFont;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: $mainColor;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+div[class*="__container"] {
+  max-width: $xl + 30px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  // @media (max-width: $xl + 30px) {
+  //   max-width: $lg + 30px;
+  // }
+  // @media (max-width: $lg + 30px) {
+  //   max-width: $md + 30px;
+  // }
+  // @media (max-width: $md + 30px) {
+  //   max-width: $sm + 30px;
+  // }
+  // @media (max-width: $sm + 30px) {
+  //   max-width: none;
+  // }
+}
+
+.title {
+  font-family: $Playfair;
+  font-weight: 700;
+  font-size: 64px;
+  @media (max-width: $xl) {
+    font-size: 56px;
+  }
+  @media (max-width: $lg) {
+    font-size: 48px;
+  }
+  @media (max-width: $sm) {
+    font-size: 36px;
+  }
+  line-height: 120%;
+  color: $darkColor;
+}
+.button {
+  // .button_blue
+  display: inline-flex;
+  line-height: 44px;
+  padding: 0 24px;
+  border: 2px $darkColor solid;
+  color: $darkColor;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  @media (max-width: $xl) {
+    line-height: 36px;
+    font-size: 16px;
+    padding: 0 20px;
+  }
+  &:hover {
+    background-color: $blueColor;
+    border: 2px transparent solid;
+  }
+
+  &_blue {
+    background-color: $blueColor;
+    border: 2px transparent solid;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------HEADER----------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1;
+  @media (max-width: $sm) {
+    position: relative;
+  }
+  // .header__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 12px 0;
+    @media (max-width: $md) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  // .header__logo
+
+  &__logo {
+    font-family: $Comfortaa;
+    color: $darkColor;
+    line-height: 180%;
+  }
+
+  // .header__list
+
+  &__list {
+    padding: 2px 0;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    @media (max-width: $lg) {
+      gap: 30px;
+    }
+    @media (max-width: $md) {
+      gap: 20px;
+    }
+    @media (max-width: $sm) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  // .header__link
+
+  &__link {
+    color: $darkColor;
+    transition: all 0.3s ease;
+    @media (max-width: $lg) {
+      font-size: 16px;
+    }
+    @media (max-width: $md) {
+      font-size: 14px;
+    }
+    @media (max-width: $sm) {
+      font-size: 16px;
+    }
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------INFO------------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+.info {
+  // .info__container
+  padding-bottom: 144px;
+  position: relative;
+  padding-top: 56px;
+  @media (max-width: $md) {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+  @media (max-width: $sm) {
+    padding-top: 10px;
+    padding-bottom: 60px;
+  }
+  &__container {
+    display: flex;
+    min-height: 629px;
+    @media (max-width: $xl) {
+      min-height: 0px;
+    }
+    @media (max-width: $md) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // .info__inner
+
+  &__inner {
+    flex: 0 1 50%;
+    padding-right: 144px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (max-width: $xl) {
+      padding-right: 80px;
+    }
+    @media (max-width: $lg) {
+      padding-right: 40px;
+    }
+    @media (max-width: $md) {
+      padding-right: 0;
+      flex: 1 1 100%;
+    }
+  }
+
+  // .inner__speciality
+
+  &__speciality {
+    font-weight: 700;
+    color: $blueColor;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    @media (max-width: $xl) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: $lg) {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+  }
+
+  // .info__title
+
+  &__title {
+    margin-bottom: 32px;
+    @media (max-width: $xl) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: $lg) {
+      margin-bottom: 18px;
+    }
+  }
+
+  // .info__text
+
+  &__text {
+    font-size: 24px;
+    margin-bottom: 32px;
+    @media (max-width: $xl) {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: $lg) {
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+  }
+
+  // .info__buttons
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+  }
+
+  // .info__button
+
+  &__button {
+  }
+
+  // .info__photo
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    @media (max-width: $md) {
+      margin: auto;
+      width: 100%;
+      max-width: 500px;
+      position: static;
+      margin-bottom: 20px;
+    }
+  }
+}
