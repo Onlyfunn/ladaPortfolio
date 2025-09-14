@@ -21,7 +21,7 @@ $mail->SMTPSecure = 'ssl';
 $mail->Port = 465;
 
 // Настройки отправителя и получателя
-$mail->setFrom('mitrofanovan@mail.ru@mail.ru', 'Форма обратной связи');
+$mail->setFrom('mitrofanovan@mail.ru', 'Форма обратной связи');
 $mail->addAddress('uncertaint00@mail.ru');
 $mail->Subject = 'Новый клиент хочет связаться с тобой!';
 
