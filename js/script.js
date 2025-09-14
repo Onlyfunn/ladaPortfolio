@@ -1,6 +1,6 @@
 "use strict";
 
-if (document.documentElement.clientWidth > 1028) {
+if (document.documentElement.clientWidth > 798) {
   const examplesButtons = document.querySelector(".info__buttons");
   if (examplesButtons) {
     examplesButtons.children[1].addEventListener("mouseenter", function (e) {
