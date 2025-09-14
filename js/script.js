@@ -48,14 +48,14 @@ if (links) {
 //   }
 // }
 
-emailjs.init("McmuAzLhW6yv9bhAg");
+emailjs.init("1gDwgO9qzpQM6flBj");
 
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
 
-    emailjs.sendForm("service_8tuhja6", "template_ipdwgkh", this).then(
+    emailjs.sendForm("service_wvmt5e7", "template_uworw4h", this).then(
       function () {
         alert("Сообщение отправлено!");
       },
