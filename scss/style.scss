@@ -210,7 +210,6 @@ div[class*="__container"] {
     overflow: hidden;
     transition: all 0.3s ease;
     @media (min-width: $md) {
-      &_active:before,
       &:before {
         content: "";
         position: absolute;
@@ -230,6 +229,9 @@ div[class*="__container"] {
         &:before {
           transform: translateX(0%);
         }
+      }
+      &_active::before {
+        transform: translateX(0%);
       }
     }
 
@@ -276,6 +278,10 @@ div[class*="__container"] {
     }
   }
 
+  &__container_about {
+    min-height: 0px;
+  }
+
   // .info__inner
 
   &__inner {
@@ -297,6 +303,10 @@ div[class*="__container"] {
       padding-right: 0;
       flex: 1 1 100%;
     }
+  }
+
+  &__inner_about {
+    padding-right: 0;
   }
 
   // .inner__speciality
@@ -387,6 +397,26 @@ div[class*="__container"] {
       margin-bottom: 20px;
     }
     img {
+      width: 100%;
+    }
+  }
+
+  &__photo_about {
+    flex: 0 1 50%;
+    padding-left: 88px;
+    @media (max-width: $xl) {
+      padding-left: 60px;
+    }
+    @media (max-width: $md) {
+      padding-left: 0px;
+      padding-top: 20px;
+    }
+    @media (max-width: $sm) {
+      padding-top: 0;
+    }
+    position: static;
+    img {
+      position: static;
       width: 100%;
     }
   }

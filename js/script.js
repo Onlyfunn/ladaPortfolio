@@ -11,3 +11,19 @@ if (document.documentElement.clientWidth > 798) {
     });
   }
 }
+
+const links = document.querySelectorAll("a.anchor");
+console.log(links);
+if (links) {
+  links.forEach((element) => {
+    element.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log(
+        document.querySelector(`#${element.href.toString().split("#")[1]}`)
+      );
+      document
+        .querySelector(`#${element.href.toString().split("#")[1]}`)
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}

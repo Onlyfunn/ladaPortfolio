@@ -37,11 +37,13 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__container">
-          <a href="" class="header__logo">vvlnm0</a>
+          <a href="index.html" class="header__logo">vvlnm0</a>
           <ul class="header__list">
             <li><a href="about.html" class="header__link">Обо мне</a></li>
-            <li><a href="Projects.html" class="header__link">Проекты</a></li>
-            <li><a href="Contacts.html" class="header__link">Контакты</a></li>
+            <li><a href="#projects" class="header__link anchor">Проекты</a></li>
+            <li>
+              <a href="#contacts" class="header__link anchor">Контакты</a>
+            </li>
           </ul>
         </div>
       </header>
@@ -56,8 +58,14 @@
                 больше информации на странице "Обо мне"
               </div>
               <div class="info__buttons">
-                <a href="" class="info__button button button_blue">Проекты</a>
-                <a href="" class="info__button button">Связаться</a>
+                <a
+                  href="#projects"
+                  class="info__button button button_blue anchor"
+                  >Проекты</a
+                >
+                <a href="#contact" class="info__button button anchor"
+                  >Связаться</a
+                >
               </div>
             </div>
             <div class="info__photo">
@@ -65,7 +73,7 @@
             </div>
           </div>
         </section>
-        <section class="projects">
+        <section class="projects" id="projects">
           <div class="projects__container">
             <div class="projects__title title">Проекты</div>
             <div class="projects__card card-projects">
@@ -115,7 +123,7 @@
             </div>
           </div>
         </section>
-        <div class="contact">
+        <div class="contact" id="contact">
           <div class="contact__container">
             <h1 class="contact__title title">Свяжись со мной</h1>
             <form action="#" class="contact__form form-contact">
@@ -135,16 +143,20 @@
           </div>
         </div>
       </main>
-      <footer class="footer">
+      <footer class="footer" id="contacts">
         <div class="footer__container">
           <div class="footer__icons">
-            <a href="" class="footer__icon">
+            <a href="https://t.me/kibrik0" class="footer__icon" target="_blank">
               <i class="fa fa-telegram" aria-hidden="true"></i>
             </a>
-            <a href="" class="footer__icon">
+            <a
+              href="https://vk.com/mayaayglin"
+              class="footer__icon"
+              target="_blank"
+            >
               <i class="fa fa-vk" aria-hidden="true"></i>
             </a>
-            <a href="" class="footer__icon">
+            <a href="tel:89677311029" class="footer__icon" target="_blank">
               <i class="fa fa-whatsapp" aria-hidden="true"></i>
             </a>
           </div>
