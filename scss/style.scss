@@ -339,13 +339,18 @@ div[class*="__container"] {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 50vw;
+    max-width: 720px;
+
     @media (max-width: $md) {
       margin: auto;
       width: 100%;
       max-width: 500px;
       position: static;
       margin-bottom: 20px;
+    }
+    img {
+      width: 100%;
     }
   }
 }

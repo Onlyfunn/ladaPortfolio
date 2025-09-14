@@ -330,7 +330,8 @@ div[class*=__container] {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 50vw;
+  max-width: 720px;
 }
 @media (max-width: 768px) {
   .info__photo {
@@ -340,6 +341,9 @@ div[class*=__container] {
     position: static;
     margin-bottom: 20px;
   }
+}
+.info__photo img {
+  width: 100%;
 }
 
 /*-------------------------------------------------------------------------------------------
