@@ -15,7 +15,7 @@ $mail->IsHTML(true);
 $mail->isSMTP();
 $mail->Host = 'smtp.mail.ru'; // SMTP сервер mail.ru
 $mail->SMTPAuth = true;
-$mail->Username = 'uncertain00@mail.ru'; // Ваш email
+$mail->Username = 'uncertaint00@mail.ru'; // Ваш email
 $mail->Password = 'Berkut1504'; // Ваш пароль от почты
 $mail->SMTPSecure = 'ssl';
 $mail->Port = 465;
