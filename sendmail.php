@@ -15,14 +15,14 @@ $mail->IsHTML(true);
 $mail->isSMTP();
 $mail->Host = 'smtp.mail.ru'; // SMTP сервер mail.ru
 $mail->SMTPAuth = true;
-$mail->Username = 'uncertaint00@mail.ru'; // Ваш email
+$mail->Username = 'mitrofanovan@mail.ru'; // Ваш email
 $mail->Password = 'Berkut1504'; // Ваш пароль от почты
 $mail->SMTPSecure = 'ssl';
 $mail->Port = 465;
 
 // Настройки отправителя и получателя
-$mail->setFrom('roma.mitrofanov.12@mail.ru', 'Форма обратной связи');
-$mail->addAddress('mitrofanovan@mail.ru');
+$mail->setFrom('mitrofanovan@mail.ru@mail.ru', 'Форма обратной связи');
+$mail->addAddress('uncertaint00@mail.ru');
 $mail->Subject = 'Новый клиент хочет связаться с тобой!';
 
 // Формирование тела письма
