@@ -27,3 +27,23 @@ if (links) {
     });
   });
 }
+
+const form = document.querySelector("form");
+if (form) {
+  form.addEventListener("submit", formsend);
+  async function formsend(e) {
+    e.preventDefault();
+    let formData = new FormData(form);
+    let response = await fetch("sendemail.php", {
+      method: "POST",
+      body: formData,
+    });
+    if (response.ok) {
+      let result = await response.json();
+      alert(result.message);
+      form.reset();
+    } else {
+      alert("Ошибка");
+    }
+  }
+}
