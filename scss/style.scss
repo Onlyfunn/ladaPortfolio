@@ -39,12 +39,19 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: $mainColor;
+  @media (max-width: $lg) {
+    font-size: 16px;
+  }
+  @media (max-width: $sm) {
+    font-size: 14px;
+  }
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 .main {
@@ -72,37 +79,55 @@ div[class*="__container"] {
 .title {
   font-family: $Playfair;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 48px;
   @media (max-width: $xl) {
-    font-size: 56px;
+    font-size: 42px;
   }
   @media (max-width: $lg) {
-    font-size: 48px;
-  }
-  @media (max-width: $sm) {
     font-size: 36px;
   }
-  line-height: 120%;
+
+  line-height: calc(72 / 48);
+  display: inline-block;
+  position: relative;
   color: $darkColor;
+  padding-bottom: 8px;
+  margin: 0 auto;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: calc(10 / 18 * 100%);
+    height: 4px;
+    border-radius: 2px;
+    background-color: $blueColor;
+    transform: translateX(-50%);
+  }
 }
 .button {
   // .button_blue
   display: inline-flex;
+  max-width: fit-content;
   line-height: 44px;
+  font-weight: 600;
+  color: $darkColor;
   padding: 0 24px;
   border: 2px $darkColor solid;
   color: $darkColor;
   border-radius: 8px;
   background-color: transparent;
   transition: all 0.3s ease;
-  @media (max-width: $xl) {
+  @media (max-width: $md) {
     line-height: 36px;
     font-size: 16px;
     padding: 0 20px;
   }
-  &:hover {
-    background-color: $blueColor;
-    border: 2px transparent solid;
+  @media (min-width: $md) {
+    &:hover {
+      background-color: $blueColor;
+      border: 2px transparent solid;
+    }
   }
 
   &_blue {
@@ -195,7 +220,7 @@ div[class*="__container"] {
   padding-bottom: 144px;
   position: relative;
   padding-top: 56px;
-  @media (max-width: $md) {
+  @media (max-width: $xl) {
     padding-top: 90px;
     padding-bottom: 100px;
   }
@@ -224,11 +249,14 @@ div[class*="__container"] {
     justify-content: center;
     @media (max-width: $xl) {
       padding-right: 80px;
+      padding-top: 25px;
     }
     @media (max-width: $lg) {
       padding-right: 40px;
+      padding-top: 10px;
     }
     @media (max-width: $md) {
+      padding-top: 0;
       padding-right: 0;
       flex: 1 1 100%;
     }
@@ -255,6 +283,20 @@ div[class*="__container"] {
   // .info__title
 
   &__title {
+    font-family: $Playfair;
+    font-weight: 700;
+    font-size: 64px;
+    @media (max-width: $xl) {
+      font-size: 56px;
+    }
+    @media (max-width: $lg) {
+      font-size: 48px;
+    }
+    @media (max-width: $sm) {
+      font-size: 36px;
+    }
+    line-height: 120%;
+    color: $darkColor;
     margin-bottom: 32px;
     @media (max-width: $xl) {
       margin-bottom: 24px;
@@ -304,6 +346,154 @@ div[class*="__container"] {
       max-width: 500px;
       position: static;
       margin-bottom: 20px;
+    }
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------PROJECTS--------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+.projects {
+  // .projects__container
+
+  &__container {
+    max-width: 992px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .projects__title
+
+  &__title {
+    margin-bottom: 80px;
+    align-self: center;
+    @media (max-width: $xl) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: $lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  // .projects__card
+
+  &__card {
+  }
+}
+
+.card-projects {
+  display: flex;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 524px;
+  box-shadow: 0px 6px 64px rgba($color: #7090b0, $alpha: 0.1);
+  @media (max-width: $xl) {
+    min-height: 450px;
+    border-radius: 20px;
+  }
+  @media (max-width: $lg) {
+    min-height: 380px;
+  }
+  @media (max-width: $md) {
+    flex-direction: column-reverse;
+    border-radius: 15px;
+    min-height: 0px;
+  }
+  @media (max-width: $sm) {
+    border-radius: 10px;
+  }
+  &:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+    @media (max-width: $md) {
+      flex-direction: column-reverse;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 80px;
+    @media (max-width: $xl) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: $lg) {
+      margin-bottom: 40px;
+    }
+  }
+
+  // .card-projects__inner
+
+  &__inner {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 50px;
+    background-color: #fff;
+    @media (max-width: $lg) {
+      padding: 0 40px;
+    }
+    @media (max-width: $md) {
+      flex: 1 0 50%;
+      padding: 50px 20px;
+    }
+    @media (max-width: $sm) {
+      padding: 30px 20px;
+      gap: 15px;
+    }
+  }
+
+  // .card-projects__title
+
+  &__title {
+    font-family: $Playfair;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: $darkColor;
+    @media (max-width: $lg) {
+      font-size: 36px;
+    }
+    @media (max-width: $md) {
+      font-size: 32px;
+    }
+    @media (max-width: $sm) {
+      font-size: 28px;
+    }
+  }
+
+  // .card-projects__text
+
+  &__text {
+  }
+
+  // .card-projects__button
+
+  &__button {
+    border-radius: 24px;
+    border-width: 1px;
+  }
+
+  // .card-projects__image
+
+  &__image {
+    flex: 0 1 50%;
+    position: relative;
+    @media (max-width: $md) {
+      flex: 1 1 100%;
+      min-height: 250px;
+    }
+    @media (max-width: $sm) {
+      min-height: 200px;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
