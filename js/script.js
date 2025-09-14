@@ -47,3 +47,20 @@ if (links) {
 //     }
 //   }
 // }
+
+emailjs.init("McmuAzLhW6yv9bhAg");
+
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_8tuhja6", "template_ipdwgkh", this).then(
+      function () {
+        alert("Сообщение отправлено!");
+      },
+      function (error) {
+        alert("Ошибка: " + JSON.stringify(error));
+      }
+    );
+  });
