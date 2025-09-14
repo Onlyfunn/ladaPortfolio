@@ -109,6 +109,7 @@ div[class*="__container"] {
   // .button_blue
   display: inline-flex;
   max-width: fit-content;
+  cursor: pointer;
   line-height: 44px;
   font-weight: 600;
   color: $darkColor;
@@ -361,7 +362,16 @@ div[class*="__container"] {
 
 .projects {
   // .projects__container
-
+  padding-bottom: 220px;
+  @media (max-width: $lg) {
+    padding-bottom: 150px;
+  }
+  @media (max-width: $md) {
+    padding-bottom: 100px;
+  }
+  @media (max-width: $sm) {
+    padding-bottom: 60px;
+  }
   &__container {
     max-width: 992px;
     display: flex;
@@ -476,6 +486,9 @@ div[class*="__container"] {
   &__button {
     border-radius: 24px;
     border-width: 1px;
+    &:hover {
+      border-width: 1px;
+    }
   }
 
   // .card-projects__image
