@@ -1,6 +1,6 @@
 "use strict";
 
-if (document.documentElement.clientWidth > 798) {
+if (document.documentElement.clientWidth >= 1022) {
   const examplesButtons = document.querySelector(".info__buttons");
   if (examplesButtons) {
     examplesButtons.children[1].addEventListener("mouseenter", function (e) {
@@ -28,39 +28,36 @@ if (links) {
   });
 }
 
-// const form = document.querySelector("form");
-// if (form) {
-//   form.addEventListener("submit", formsend);
-//   async function formsend(e) {
-//     e.preventDefault();
-//     let formData = new FormData(form);
-//     let response = await fetch("sendemail.php", {
-//       method: "POST",
-//       body: formData,
-//     });
-//     if (response.ok) {
-//       let result = await response.json();
-//       alert(result.message);
-//       form.reset();
-//     } else {
-//       alert("Ошибка");
-//     }
-//   }
-// }
-
 emailjs.init("X0ywkiXLz5gT5ZUvz");
+const form = document.getElementById("contact-form");
+const message = document.querySelector(".message");
+const inputName = document.getElementById("name");
+const inputEmail = document.getElementById("email");
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    emailjs.sendForm("service_9ksdmzg", "template_wakndhn", this).then(
-      function () {
-        alert("Сообщение отправлено!");
-      },
-      function (error) {
-        alert("Ошибка: " + JSON.stringify(error));
-      }
-    );
-  });
+  form.classList.add("_active");
+  emailjs.sendForm("service_9ksdmzg", "template_wakndhn", this).then(
+    function () {
+      // alert("Сообщение отправлено!");
+      form.classList.remove("_active");
+      form.reset();
+      message.innerHTML = `Данные успешно отправлены!`;
+      message.classList.add("_active");
+      setTimeout(() => {
+        message.classList.remove("_active");
+      }, 4000);
+    },
+    function (error) {
+      // alert("Ошибка: " + JSON.stringify(error));
+      form.classList.remove("_active");
+      message.innerHTML = `Ошибка: ${JSON.stringify(error)}`;
+
+      message.classList.add("_active");
+      setTimeout(() => {
+        message.classList.remove("_active");
+      }, 4000);
+    }
+  );
+});

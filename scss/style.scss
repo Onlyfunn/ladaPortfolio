@@ -126,7 +126,7 @@ div[class*="__container"] {
     font-size: 16px;
     padding: 0 20px;
   }
-  @media (min-width: $md) {
+  @media (min-width: $lg) {
     &:hover {
       background-color: $blueColor;
       border: 2px transparent solid;
@@ -136,6 +136,13 @@ div[class*="__container"] {
   &_blue {
     background-color: $blueColor;
     border: 2px transparent solid;
+    @media (min-width: $lg) {
+      &:hover {
+        background-color: transparent;
+        border: 2px $darkColor solid;
+        color: $darkColor;
+      }
+    }
   }
 }
 
@@ -177,7 +184,7 @@ div[class*="__container"] {
     color: $darkColor;
     line-height: 180%;
     @media (max-width: $md) {
-      font-size: 18px;
+      font-size: 24px;
     }
   }
 
@@ -209,7 +216,7 @@ div[class*="__container"] {
     display: inline-block;
     overflow: hidden;
     transition: all 0.3s ease;
-    @media (min-width: $md) {
+    @media (min-width: $lg) {
       &:before {
         content: "";
         position: absolute;
@@ -378,6 +385,12 @@ div[class*="__container"] {
   // .info__button
 
   &__button {
+    &.info__button_no-hover.button_blue {
+      &:hover {
+        background-color: $blueColor;
+        border: 2px transparent solid;
+      }
+    }
   }
 
   // .info__photo
@@ -388,7 +401,7 @@ div[class*="__container"] {
     right: 0;
     width: 50vw;
     max-width: 720px;
-
+    background: url(../img/info/info-img-bg.svg) 0 0 / 100% 100% no-repeat;
     @media (max-width: $md) {
       margin: auto;
       width: 100%;
@@ -398,6 +411,8 @@ div[class*="__container"] {
     }
     img {
       width: 100%;
+      mask-image: url(../img/info/info-img-bg.svg);
+      mask-size: 100%;
     }
   }
 
@@ -620,12 +635,38 @@ div[class*="__container"] {
   margin: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  &._active {
+    .form__inner {
+      filter: blur(2px);
+      pointer-events: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .form__spinner {
+      display: block;
+    }
+  }
+  .form__inner {
+  }
 
   &__lable {
     font-size: 17px;
     font-weight: 600;
     color: $darkColor;
     margin-bottom: 8px;
+
+    &._active {
+      color: red;
+      & + input {
+        border-color: red;
+      }
+    }
   }
 
   // .form-contact__input
@@ -659,6 +700,45 @@ div[class*="__container"] {
   &__button {
     margin-left: auto;
   }
+
+  .form__spinner {
+    display: none;
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+
+    & .path {
+      stroke: hsl(210, 70, 75);
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
 }
 
 /*-------------------------------------------------------------------------------------------
@@ -690,8 +770,19 @@ div[class*="__container"] {
     font-size: calc(32px + 16 * (100vw / 1430));
     color: $darkColor;
     transition: all 0.3s ease;
-    &:hover {
-      color: $blueColor;
+    @media (min-width: $lg) {
+      &:hover {
+        color: $blueColor;
+      }
+      &:has(i.fa-telegram):hover {
+        color: #27a7e7;
+      }
+      &:has(i.fa-vk):hover {
+        color: #597da3;
+      }
+      &:has(i.fa-whatsapp):hover {
+        color: #2bb741;
+      }
     }
   }
 
@@ -700,5 +791,40 @@ div[class*="__container"] {
   &__info {
     font-size: 16px;
     text-align: center;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------
+-----------------------------------------MESSAGE---------------------------------------------
+-------------------------------------------------------------------------------------------*/
+
+.message {
+  position: fixed;
+  left: 50%;
+  top: -100%;
+  max-width: 30%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: $blueColor;
+  color: $darkColor;
+  animation: none;
+  &._active {
+    animation: send 4s ease;
+  }
+
+  @keyframes send {
+    0% {
+      top: -100%;
+    }
+    25% {
+      top: 20px;
+    }
+    75% {
+      top: 20px;
+    }
+    100% {
+      top: -100%;
+    }
   }
 }
