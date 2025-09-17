@@ -767,13 +767,27 @@ div[class*=__container] {
   position: fixed;
   left: 50%;
   top: -100%;
-  max-width: 30%;
+  max-width: 37vw;
   transform: translateX(-50%);
   border-radius: 8px;
   padding: 10px 20px;
   background-color: #6db9ff;
   color: #25282b;
   animation: none;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .message {
+    max-width: 50vw;
+  }
+}
+@media (max-width: 576px) {
+  .message {
+    max-width: none;
+    width: 70vw;
+    padding: 10px;
+  }
 }
 .message._active {
   animation: send 4s ease;
