@@ -82,32 +82,49 @@
               class="contact__form form-contact"
               id="contact-form"
             >
-              <label class="form-contact__lable" for="name">Ваше имя</label>
-              <input
-                class="form-contact__input"
-                type="text"
-                id="name"
-                name="name"
-              />
-              <label class="form-contact__lable" for="email">Ваш Email</label>
-              <input
-                class="form-contact__input"
-                type="email"
-                id="email"
-                name="email"
-              />
-              <label class="form-contact__lable" for="message">Сообщение</label>
-              <textarea
-                class="form-contact__textarea"
-                id="message"
-                name="message"
-              ></textarea>
-              <button
-                type="submit"
-                class="form-contact__button button button_blue"
-              >
-                Отправить
-              </button>
+              <div class="form__inner">
+                <label class="form-contact__lable" for="name">Ваше имя</label>
+                <input
+                  class="form-contact__input"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
+                <label class="form-contact__lable" for="email">Ваш Email</label>
+                <input
+                  class="form-contact__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+                <label class="form-contact__lable" for="message"
+                  >Сообщение</label
+                >
+                <textarea
+                  class="form-contact__textarea"
+                  id="message"
+                  name="message"
+                ></textarea>
+                <button
+                  type="submit"
+                  class="form-contact__button button button_blue"
+                >
+                  Отправить
+                </button>
+              </div>
+
+              <svg class="form__spinner" viewBox="0 0 50 50">
+                <circle
+                  class="path"
+                  cx="25"
+                  cy="25"
+                  r="20"
+                  fill="none"
+                  stroke-width="5"
+                ></circle>
+              </svg>
             </form>
           </div>
         </div>
@@ -132,6 +149,7 @@
           <div class="footer__info">vvlnm0 2025</div>
         </div>
       </footer>
+      <div class="message"></div>
     </div>
     <script src="js/script.js"></script>
   </body>
