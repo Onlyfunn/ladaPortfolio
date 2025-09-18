@@ -31,11 +31,12 @@
       rel="stylesheet"
       href="libraries/font-awesome-4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="body">
     <div class="wrapper">
-      <header class="header">
+      <header class="header wow fadeInDown">
         <div class="header__container">
           <a href="index.html" class="header__logo">vvlnm0</a>
           <ul class="header__list">
@@ -48,9 +49,9 @@
         </div>
       </header>
       <main class="main">
-        <section class="info">
+        <section class="info wow">
           <div class="info__container">
-            <div class="info__inner">
+            <div class="info__inner wow fadeInLeft">
               <div class="info__speciality">Промышленный дизайнер</div>
               <div class="info__title">Привет, меня зовут Лада</div>
               <div class="info__text">
@@ -68,15 +69,15 @@
                 >
               </div>
             </div>
-            <div class="info__photo">
+            <div class="info__photo wow fadeInRight">
               <img src="img/info/info-img-main.png" alt="Фон" />
             </div>
           </div>
         </section>
         <section class="projects" id="projects">
           <div class="projects__container">
-            <div class="projects__title title">Проекты</div>
-            <div class="projects__card card-projects">
+            <div class="projects__title title wow fadeIn">Проекты</div>
+            <div class="projects__card card-projects wow fadeInUp">
               <div class="card-projects__inner">
                 <h2 class="card-projects__title">Название проекта</h2>
                 <div class="card-projects__text">
@@ -91,7 +92,7 @@
                 <img src="img/projects/project-1.jpg" alt="Проект 1" />
               </div>
             </div>
-            <div class="projects__card card-projects">
+            <div class="projects__card card-projects wow fadeInUp">
               <div class="card-projects__inner">
                 <h2 class="card-projects__title">Название проекта</h2>
                 <div class="card-projects__text">
@@ -106,7 +107,7 @@
                 <img src="img/projects/project-2.jpg" alt="Проект 2" />
               </div>
             </div>
-            <div class="projects__card card-projects">
+            <div class="projects__card card-projects wow fadeInUp">
               <div class="card-projects__inner">
                 <h2 class="card-projects__title">Название проекта</h2>
                 <div class="card-projects__text">
@@ -125,46 +126,55 @@
         </section>
         <div class="contact" id="contact">
           <div class="contact__container">
-            <h1 class="contact__title title">Свяжись со мной</h1>
+            <h1 class="contact__title title wow fadeIn">Свяжись со мной</h1>
             <form
               action="#"
               class="contact__form form-contact"
               id="contact-form"
             >
-              <div class="form__inner">
-                <label class="form-contact__lable" for="name">Ваше имя</label>
-                <input
-                  class="form-contact__input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                />
-                <label class="form-contact__lable" for="email">Ваш Email</label>
-                <input
-                  class="form-contact__input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-                <label class="form-contact__lable" for="message"
-                  >Сообщение</label
-                >
-                <textarea
-                  class="form-contact__textarea"
-                  id="message"
-                  name="message"
-                ></textarea>
+              <div class="form-contact__inner">
+                <div class="form-contact__item wow fadeInLeft">
+                  <label class="form-contact__lable" for="name">Ваше имя</label>
+                  <input
+                    class="form-contact__input _req"
+                    type="text"
+                    id="name"
+                    name="name"
+                  />
+                  <div class="form-contact__error-text">Введите ваше имя</div>
+                </div>
+                <div class="form-contact__item wow fadeInRight">
+                  <label class="form-contact__lable" for="email"
+                    >Ваш Email</label
+                  >
+                  <input
+                    class="form-contact__input _req _email"
+                    type="text"
+                    id="email"
+                    name="email"
+                  />
+                  <div class="form-contact__error-text">Введите ваш Email</div>
+                </div>
+                <div class="form-contact__item wow fadeInLeft">
+                  <label class="form-contact__lable" for="message"
+                    >Сообщение</label
+                  >
+                  <textarea
+                    class="form-contact__textarea"
+                    id="message"
+                    name="message"
+                  ></textarea>
+                </div>
+
                 <button
                   type="submit"
-                  class="form-contact__button button button_blue"
+                  class="form-contact__button button button_blue wow fadeInRight"
                 >
                   Отправить
                 </button>
               </div>
 
-              <svg class="form__spinner" viewBox="0 0 50 50">
+              <svg class="form-contact__spinner" viewBox="0 0 50 50">
                 <circle
                   class="path"
                   cx="25"
@@ -178,7 +188,7 @@
           </div>
         </div>
       </main>
-      <footer class="footer" id="contacts">
+      <footer class="footer wow fadeInUp" id="contacts">
         <div class="footer__container">
           <div class="footer__icons">
             <a href="https://t.me/kibrik0" class="footer__icon" target="_blank">
@@ -201,6 +211,7 @@
       <div class="message"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <script src="libraries/wow.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

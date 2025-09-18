@@ -638,7 +638,7 @@ div[class*="__container"] {
   position: relative;
 
   &._active {
-    .form__inner {
+    .form-contact__inner {
       filter: blur(2px);
       pointer-events: none;
       -webkit-touch-callout: none;
@@ -648,11 +648,28 @@ div[class*="__container"] {
       -ms-user-select: none;
       user-select: none;
     }
-    .form__spinner {
+    .form-contact__spinner {
       display: block;
     }
   }
-  .form__inner {
+  &__error-text {
+    display: none;
+  }
+  &__item {
+    margin-bottom: 16px;
+  }
+  &__item._error {
+    label {
+      color: red;
+    }
+    input {
+      border-color: red;
+    }
+    .form-contact__error-text {
+      display: block;
+      color: red;
+      font-size: 14px;
+    }
   }
 
   &__lable {
@@ -677,9 +694,12 @@ div[class*="__container"] {
     border-radius: 8px;
     background-color: transparent;
     border: 1px $borderColor solid;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     padding: 10px 15px;
     color: $darkColor;
+    &:focus {
+      background-color: #eee;
+    }
   }
 
   // .form-contact__textarea
@@ -693,6 +713,9 @@ div[class*="__container"] {
     margin-bottom: 24px;
     padding: 10px 15px;
     color: $darkColor;
+    &:focus {
+      background-color: #eee;
+    }
   }
 
   // .form-contact__button
@@ -701,7 +724,7 @@ div[class*="__container"] {
     margin-left: auto;
   }
 
-  .form__spinner {
+  .form-contact__spinner {
     display: none;
     animation: rotate 2s linear infinite;
     z-index: 2;
