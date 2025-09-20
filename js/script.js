@@ -67,10 +67,8 @@ if (form) {
     let formReq = document.querySelectorAll("._req");
     formReq.forEach((item) => {
       item.addEventListener("focus", function (e) {
-        console.log(1);
         item.parentElement.classList.remove("_error");
       });
-      console.log(item);
       formRemoveError(item);
       if (item.classList.contains("_email")) {
         if (emailTest(item)) {
